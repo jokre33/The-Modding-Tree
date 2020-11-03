@@ -1,7 +1,7 @@
 let modInfo = {
 	name: "The ??? Tree",
-	id: "mymod",
-	author: "nobody",
+	id: "jokretree",
+	author: "jokre33",
 	pointsName: "points",
 	discordName: "",
 	discordLink: "",
@@ -12,7 +12,7 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.0",
+	num: "0.1",
 	name: "Literally nothing",
 }
 
@@ -35,6 +35,12 @@ function getPointGen() {
 		return new Decimal(0)
 
 	let gain = new Decimal(1)
+	if (hasUpgrade("p", 11)) {
+		gain = gain.times(upgradeEffect("p", 11));
+	}
+	if (hasUpgrade("p", 12)) {
+		gain = gain.times(upgradeEffect("p", 12));
+	}
 	return gain
 }
 
